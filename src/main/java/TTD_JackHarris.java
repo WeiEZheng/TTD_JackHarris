@@ -25,6 +25,20 @@ public class TTD_JackHarris {
         return input;
     }
     public static boolean firstNumberIsBigger (String first, String second){
+        if (first.charAt(0) == '-' && second.charAt(0) != '-')
+            return false;
+        if (second.charAt(0) == '-' && first.charAt(0) != '-')
+            return true;
+        if (first.charAt(0) == '-' && second.charAt(0) == '-'){
+            if (first.length() > second.length())
+                return false;
+            if (first.length() < second.length())
+                return true;
+            if (first.substring(1).compareTo(second.substring(1)) < 0)
+                return true;
+            else
+                return false;
+        }
         if (first.length() > second.length())
             return true;
         if (first.length() == second.length()
