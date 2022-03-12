@@ -36,4 +36,22 @@ public class TTD_JackHarrisTest {
         //Then
         Assert.assertTrue(actual);
     }
+    public  void firstNumBiggerNegativeTest(){
+        //Given
+        String first = "-12";
+        String second = "10";
+        //When
+        boolean actual = TTD_JackHarris.firstNumberIsBigger(first, second);
+        //Then
+        Assert.assertFalse(actual);
+    }
+    public  void firstNumBiggerNegativeTest1(){
+        //Given
+        String first = "10";
+        String second = "-8";
+        //When
+        boolean actual = TTD_JackHarris.firstNumberIsBigger(first, second);
+        //Then
+        Assert.assertTrue(actual);
+    }
 }

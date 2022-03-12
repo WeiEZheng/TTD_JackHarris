@@ -5,11 +5,10 @@ public class TTD_JackHarris {
     //sort without converting to integer
     public static String[] stringSort(String[] input){
         String temp = "";
-        int count=1;
-        for (int j=0;j<input.length;j++) {
-            if (count == 0)
-                break;
-            count=0;
+        boolean sortedFlag;
+//        for (int j=0;j<input.length;j++) {
+        do {
+            sortedFlag = false;
             for (int i = 1; i < input.length; i++) {
                 if (firstNumberIsBigger(input[i-1],input[i]))
 //                if (input[i - 1].length() > input[i].length() ||
@@ -19,11 +18,10 @@ public class TTD_JackHarris {
                     temp = input[i - 1];
                     input[i - 1] = input[i];
                     input[i] = temp;
-                    count++;
+                    sortedFlag = true;
                 }
             }
-            System.out.println(Arrays.toString(input));
-        }
+        } while (sortedFlag);
         return input;
     }
     public static boolean firstNumberIsBigger (String first, String second){
